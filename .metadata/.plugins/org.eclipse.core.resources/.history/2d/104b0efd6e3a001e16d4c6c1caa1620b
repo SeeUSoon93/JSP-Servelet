@@ -1,0 +1,56 @@
+package com.smhrd.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/Ex00")
+public class Ex00CreateServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    // 자바 - 모든 데이터들을 바이트 형태로 입출력(스트림 - 통로)
+	// 입력 : 객체 -> 바이트배열 반환(직렬화)
+	// 출력 : 바이트배열 -> 객체(역직렬화)
+    
+	// 생성자 : 객체 생성(자바 객체)
+    public Ex00CreateServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+    
+    // 1. 처음에 딱 한번 호출, 초기값 설정 메소드
+    // 서블릿 객체를 생성하고 초기화하는 작업은 비용이 많이 듬
+    // -> 다음에 또 요청이 올 때를 위해 이미 생성된 서블릿 객체를 메모리에 남겨둠
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init 호출");
+	}
+
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+	
+	// 2. 브라우져(클라이언트)의 요청을 처리, 로직을 쓰는 구간
+	// 1) 요청방식에 따라서 doGet()/doPost() 호출할건지 결정
+	// 2) 어떤 요청방식이느냐에 상관없이 똑같이 처리하고 싶을 때 오버라이딩 할 필요 없이 service에서 처리 가능
+	
+	// request : http(Web에서 사용하는 Protocol) 요청정보를 제공
+	// response : http 응답정보를 제공
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("serviec 호출~");
+		doGet(request, response);
+		doPost(request, response);
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet 호출");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost 호출");
+	}
+
+}

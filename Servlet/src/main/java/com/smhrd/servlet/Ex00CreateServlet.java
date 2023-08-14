@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-	// @ -> annotation (기능이 있는 주석역할)
-	// url  mapping 방법
-	// 1. @WebServlet : url-mapping 역할 수행
-	// 2. web.xml 추가
+// @ -> annotation (기능이 있는 주석역할)
+// url  mapping 방법
+// 1. @WebServlet : url-mapping 역할 수행
+// 2. web.xml 추가
 
+// 자주 볼 에러
+// 1. 500 : 코드에러
+// 2. 404 : 경로에러
 @WebServlet("/Ex00")
 public class Ex00CreateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

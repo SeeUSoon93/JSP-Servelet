@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JSP2/src/main/webapp/Ex03Naver.jsp&apos; to &apos;Ex03NaverPage.jsp&apos;" description="Rename resource &apos;Ex03Naver.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/Ex03Naver.jsp" name="Ex03NaverPage.jsp" stamp="1692261515491" updateReferences="true"/>
+</session>

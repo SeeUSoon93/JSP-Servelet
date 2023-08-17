@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- Get방식 -->
+	<!-- 1. url에 데이터를 담아서 전송
+		 2. 데이터 길이에 제한
+		 3. 보안에 취약함
+		 4. post방식 보다는 속도가 빠름 -->
+	<form>
+		NAME : <input type="text" name="name">				
+	</form>
+	
+</body>
+</html>

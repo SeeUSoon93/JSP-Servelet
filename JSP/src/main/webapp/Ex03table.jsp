@@ -7,15 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%	String nums = "";
-		for(int i = 1; i<=10;i++){
-			nums+="<td>"+i+"</td>";
-		}		
-	%>
-
-	<table align="center" border="1">
-		<%=nums%>
+	<!-- 스크립틀릿 끊어서 사용하기 -->
+	<table border="1">
+		<tr>
+			<%for (int i = 1; i <= 10; i++) {%>
+			<td><%=i %></td>
+			<%}%>
+		</tr>
 	</table>
-	
+	<br>
+	<!-- 스크립틀릿 끊지 않고 사용하기 -->
+	<table border="1">
+		<tr>
+			<%for (int i = 1; i <= 10; i++) {
+				out.print("<td>"+i+"</td>");
+			}%>
+		</tr>
+	</table>
+
 </body>
 </html>

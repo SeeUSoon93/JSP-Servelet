@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	
+	<form action="Ex06Join" method="get">
+		NAME : <input type="text" name="name">
+		<input type="submit" value="GET">
+	</form>
+
+
+
+
+
+
+</body>
+
+</html>

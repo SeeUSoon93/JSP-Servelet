@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<% int sum = 21;%>
+	<%!
+		public String isOdd(int num){
+			String str = "";
+			if(num%2==0){
+				str = "은 짝수입니다!";
+			}else{
+				str = "은 홀수입니다!";
+			}
+		return str;
+	}
+	%>
+	<%=sum + isOdd(sum)%>
+	
+	
+</body>
+</html>

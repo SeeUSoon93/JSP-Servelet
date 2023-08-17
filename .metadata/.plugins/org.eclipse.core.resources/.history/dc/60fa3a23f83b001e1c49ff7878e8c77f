@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	
+	<form action="Ex06Join" method="get">
+		<div>
+			<h2>회원가입</h2>
+			ID : <input type="text" name="id"><br>
+			PW : <input type="password" name="pw"><br>
+			NICK : <input type="text" name="nick"><br>
+			GENDER : 남자<input type="radio" name="gender">
+					 여자<input type="radio" name="gender"><br>
+			HOBBY :
+			영화감상<input type="checkbox" name="hobby">
+			유튜브<input type="checkbox" name="hobby">
+			여행<input type="checkbox" name="hobby">
+			운동<input type="checkbox" name="hobby">
+			먹기<input type="checkbox" name="hobby">
+			<br>
+			<input type="submit" value="회원가입">			
+		</div>
+	</form>
+
+
+
+
+
+
+</body>
+
+</html>

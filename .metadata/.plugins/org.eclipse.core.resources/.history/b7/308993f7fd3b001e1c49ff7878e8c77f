@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form action="Ex07Select">
+		<h2>오늘 점심비 낼 사람은?</h2>
+		이름 : <input type="text" name="name">
+		<input type="text" name="name">
+		<input type="text" name="name">
+		<input type="text" name="name">		
+		<br>
+		<input type="submit" value="뽑기!">
+		
+	</form>
+</body>
+</html>

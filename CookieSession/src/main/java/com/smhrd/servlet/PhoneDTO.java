@@ -1,0 +1,53 @@
+package com.smhrd.servlet;
+
+public class PhoneDTO {
+	private String name;
+	private String rank;
+	private String phone;
+	private String email;
+	private int age;	
+	
+	public PhoneDTO(String name, String rank, String phone, String email, int age) {
+		this.name = name;
+		this.rank = rank;
+		this.phone = phone;
+		this.email = email;
+		this.age = age;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getRank() {
+		return rank;
+	}
+	public void setRank(String rank) {
+		this.rank = rank;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,28 @@
+package com.smhrd.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/Ex06MakeSession")
+public class Ex06MakeSession extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Servlet에서 Session 생성 후 값 넣기
+		
+		HttpSession session = request.getSession();
+		
+		// session에 나이주기
+		session.setMaxInactiveInterval(10);
+		
+		
+		session.setAttribute("name", "군순이");
+		
+		response.sendRedirect("Ex06main.jsp");
+		
+	}
+
+}

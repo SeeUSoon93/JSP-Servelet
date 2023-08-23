@@ -35,12 +35,16 @@ li:hover {
 </style>
 </head>
 <body>
-	<% String id = request.getParameter("id"); 
-		if(id != null){%>
-			<%=id %>님 환영합니다~		
-	<%	}
-	%>
-	
+	<%
+	String nick = request.getParameter("nick");
+	if(nick != null){%>
+	<%=nick %>님 환영합니다~
+	<%}
+	String id = (String)session.getAttribute("id"); if(id != null){%>
+	<%=id %>님 환영합니다~
+	<%}%>
+
+
 	<ul>
 		<li><a href="login.jsp">로그인</a></li>
 		<li><a href="join.jsp">회원가입</a></li>

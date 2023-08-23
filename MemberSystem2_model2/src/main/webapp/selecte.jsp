@@ -11,10 +11,7 @@
 	
 	%>
 	<form action="selectService.jsp" method="post">
-		<h2>회원 정보</h2>
-		
-		
-		
+		<h2>회원 정보</h2>		
 		<input type="submit" value="조회">
 	</form>
 </body>

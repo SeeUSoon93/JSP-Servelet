@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="deleteService.jsp" method="post">
+	<form action="deleteService" method="post">
 		<h2>회원탈퇴</h2>
 		ID : <input type="text" name="id"><br>
 		PW : <input type="password" name="pw"><br>

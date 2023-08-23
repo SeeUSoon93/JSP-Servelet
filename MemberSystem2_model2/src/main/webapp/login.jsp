@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginService.jsp" method="post">
+	<form action="loginService" method="post">
 		<h2>로그인</h2>
 		ID : <input type="text" name="id"><br>
 		PW : <input type="password" name="pw"><br>

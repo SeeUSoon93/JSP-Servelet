@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="updateService.jsp" method="post">
+	<form action="updateService" method="post">
 		<h2>회원정보수정</h2>
 		ID : <input type="text" name="id"><br>
 		PW : <input type="password" name="pw"><br>

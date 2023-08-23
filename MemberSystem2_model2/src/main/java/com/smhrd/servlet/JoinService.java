@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,16 +65,9 @@ public class JoinService extends HttpServlet {
 
 			cnt = psmt.executeUpdate();
 
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-
-			// 4.연결 끊음
-			// - DB와 연결된 객체의 연결을 끊어준다 -> 역순
-
 			try {
 				if (psmt != null) {
 					psmt.close();
@@ -81,14 +75,17 @@ public class JoinService extends HttpServlet {
 				if (conn != null) {
 					conn.close();
 				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		if (cnt > 0) {
 			System.out.println("회원가입 성공!");
-			response.sendRedirect("Main.jsp");
+
+			RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+			request.setAttribute("nick", nick);
+			rd.forward(request, response);
+			// response.sendRedirect("Main.jsp");
 		} else {
 			System.out.println("회원가입 실패!");
 			response.sendRedirect("join.jsp");

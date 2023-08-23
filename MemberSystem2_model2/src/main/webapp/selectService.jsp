@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -12,8 +13,9 @@
 </head>
 <body>
 <%
-	String id = "";
-	String nick = "";
+	ArrayList<String> idList = new ArrayList<>();
+	ArrayList<String> nameList = new ArrayList<>();
+	
 
 	request.setCharacterEncoding("UTF-8");	
 	
@@ -38,19 +40,15 @@
 	
 	ResultSet rs = psmt.executeQuery();
 	
-	if(rs.next()){
-		System.out.println("조회 성공!");
-		response.sendRedirect("Main.jsp");
-		String id2 = rs.getString("id");
-		id += id2;
-		String nick2 = rs.getString("nick");
-		nick += nick2;
-		
-	}else {
-		System.out.println("조회 실패!");
-		response.sendRedirect("select.jsp");
-	}
+	
+	while (rs.next()) {
 
+		String id = rs.getString(1);
+		String nick = rs.getString(3);
+		
+		idList.add(id);
+		nameList.add(nick);
+	}
 	
 	// 4.연결 끊음
 	// - DB와 연결된 객체의 연결을 끊어준다 -> 역순

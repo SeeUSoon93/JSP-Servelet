@@ -1,0 +1,45 @@
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	request.setCharacterEncoding("UTF-8");
+
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String nick = request.getParameter("nick");
+
+	// 0. 사용하고자 하는 DBMS 드라이버를 프로젝트에 추가
+
+	// 1.드라이버 동적로딩
+	// - 사용하는 DBMS에 맞는 드라이버를 로딩
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+
+	// 2.데이터베이스 연결
+	// - 드라이버를 통해서 내가 사용하는 DBMS와의 연결
+	// 	 데이터베이스 연결을 하기 위해서는 현재 내가 사용하는 DBMS의
+	//   주소, 계정, 비밀번호가 필요하다
+	String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String db_id = "SERVICE";
+	String db_pw = "12345";
+
+	Connection conn = DriverManager.getConnection(db_url, db_id, db_pw);
+
+	// 3.SQL문 실행
+	// 4.연결 끊음
+	%>
+
+
+
+
+
+
+</body>
+</html>

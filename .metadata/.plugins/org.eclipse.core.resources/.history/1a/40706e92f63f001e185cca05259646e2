@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%
+	// 세션 값 설정 setAttribute(name(String), value(Object));
+	
+	session.setAttribute("id","내가 만든 쿠키");
+	session.setAttribute("age",20);
+	
+	%>
+
+
+</body>
+</html>

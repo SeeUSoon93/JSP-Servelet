@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- application 영역을 활용한 today 카운트 기능 만들기
+	
+	 -->
+	<%
+	String today = (String) application.getAttribute("today");
+	if (today == null) {
+		application.setAttribute("today", "1");
+	} else {
+		int cnt = Integer.parseInt(today);
+		cnt++;
+		application.setAttribute("today", cnt);
+	}
+	%>
+	<h2>오늘 방문자 수 :<%=application.getAttribute("today")%></h2>
+</body>
+</html>

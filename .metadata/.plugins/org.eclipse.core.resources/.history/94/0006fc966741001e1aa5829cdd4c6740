@@ -1,0 +1,21 @@
+<%@page import="javax.websocket.Session"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		session.setAttribute("nick", "순이");
+		String nick = (String)session.getAttribute("nick");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Ex02RequestScope2.jsp");
+		rd.forward(request, response);
+	%>
+
+
+</body>
+</html>

@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="package com.smhrd.servlet;"/>
+		<item key="selection" value="&lt;%@page import=&quot;com.smhrd.servlet.PhoneDTO&quot;%&gt;"/>
 		<list key="findhistory">
+			<item value="&lt;%@page import=&quot;com.smhrd.servlet.PhoneDTO&quot;%&gt;"/>
 			<item value="package com.smhrd.servlet;"/>
 		</list>
 		<list key="replacehistory">

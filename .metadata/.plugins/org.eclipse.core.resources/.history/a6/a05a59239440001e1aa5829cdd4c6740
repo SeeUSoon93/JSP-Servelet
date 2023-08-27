@@ -1,0 +1,43 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.servlet.PhoneDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<% ArrayList phoneList = (ArrayList)session.getAttribute("phoneList");
+	ArrayList<PhoneDTO> list = new ArrayList<PhoneDTO>();
+	for(int i = 0 ; i <phoneList.size();i++){
+		list.add((PhoneDTO)phoneList.get(i));
+	}
+	%>
+	<h2>연락처 목록</h2>
+	<table border="1">
+		<tr>
+			<td>이름</td>
+			<td>직급</td>
+			<td>연락처</td>
+			<td>이메일</td>
+			<td>나이</td>
+		</tr>
+		<!-- 여기 아래에 세션에 담긴 한사람의 연락처 정보를 나오게 하시오 -->
+		<tr>
+		<%for(int i = 0 ; i <list.size();i++){ %>
+			<td><%=list.get(0).getName() %></td>
+			<td><%=list.get(0).getRank() %></td>
+			<td><%=list.get(0).getPhone() %></td>
+			<td><%=list.get(0).getEmail() %></td>
+			<td><%=list.get(0).getAge() %></td>
+			<%} %>
+		</tr>
+
+
+	</table>
+
+
+</body>
+</html>

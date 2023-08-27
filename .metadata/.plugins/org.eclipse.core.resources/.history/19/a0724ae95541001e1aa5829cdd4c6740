@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나만의 바텐더, 마텐더</title>
+<link rel="stylesheet" href="fontstyle.css">
+<style class="header">
+/* 헤더 스타일 */
+ul {
+	display: flex;
+	list-style-type: none;
+	font-size: 1.25rem;
+	align-items: center
+}
+
+.menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	margin: 20px;
+	font-family: GeekbleMalang2WOFF2;
+}
+
+#logo {
+	display: flex;
+	align-items: center;
+}
+
+li {
+	margin: 0 40px;
+	justify-content: space-between;
+	/* padding: 15px 0px; */
+}
+
+.joinBtn {
+	background-color: #CC9933;
+	color: white;
+	padding: 15px 20px;
+	border-radius: 10px;
+}
+
+li:hover {
+	color: #CC9933;
+	cursor: pointer;
+}
+
+.joinBtn:hover {
+	background-color: #0d4660;
+	color: white;
+	text-decoration: none;
+}
+
+#back {
+	background-image: url(./img/mainthum.jpg);
+	height: 300px;
+	max-width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0%;
+	padding: 0%;
+}
+</style>
+</head>
+<body>
+	<header>
+		<div id="menu">
+			<div id="logo">
+				<img src="./img/logo.png" alt="" width="170px">
+			</div>
+			<ul class = 'head_menu'>
+				<li>맞춤추천</li>
+				<li>전체보기</li>
+				<li>칵테일이야기</li>
+				<li>오늘의 칵테일</li>
+				<li>커뮤니티</li>
+				<li class="joinBtn">로그인/회원가입</li>
+			</ul>
+		</div>
+	</header>
+	<div id="back"></div>
+	
+
+</body>
+</html>

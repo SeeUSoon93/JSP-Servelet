@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<%
+	// 1. 쿠키 객체 생성
+	// new Cookie(name(String), value(String));
+	Cookie newjeans = new Cookie("test","내가 만든 쿠키~");
+	
+	// 2. 유효기간 설정(초단위)
+	newjeans.setMaxAge(60*60*24*365);
+	
+	// 3. 클라이언트에게 쿠키 전송(서버 -> 클라이언트)
+	response.addCookie(newjeans);
+	
+	// 4. 쿠키를 생성하면서 전송	
+	response.addCookie(new Cookie("test2", "너를 위해 구웠지~"));
+	
+	%>
+	
+	<a href="Ex02getCookie.jsp">쿠키확인</a>
+
+</body>
+</html>

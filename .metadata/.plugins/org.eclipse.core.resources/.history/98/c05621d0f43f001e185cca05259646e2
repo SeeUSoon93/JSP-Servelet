@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	// 1. 쿠키 생성(삭제시켜주는 메소드가 없기 때문에 같은 name의 쿠키를 생성해서 유효기간 변경)
+	Cookie newjeans = new Cookie("test","Cookie I made");
+	
+	// 2. 유효기간 0초
+	
+	%>
+</body>
+</html>

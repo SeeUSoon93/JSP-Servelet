@@ -1,0 +1,32 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	
+
+	
+	
+	// 3.SQL문 실행
+	// - 사용하고 싶은 SQL문장 작성 및 SQL문장 실행
+	//   SQL문장을 완성시키고 실행할 수 있는 객체 필요
+	// -> PreparedStatement 객체 -> Connection객체를 통해 받아옴
+	
+
+	// 4.연결 끊음
+	// - DB와 연결된 객체의 연결을 끊어준다 -> 역순
+	
+
+	
+	
+	%>
+</body>
+</html>

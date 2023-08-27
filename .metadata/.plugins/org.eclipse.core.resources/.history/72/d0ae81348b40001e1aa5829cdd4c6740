@@ -1,0 +1,9 @@
+package com.smhrd.servlet;
+
+public class PhoneDTO {
+	String name;
+	String rank;
+	String phone;
+	String email;
+	int age;
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="20">
-    <list key="modules" value0="JSP2::org.eclipse.jst.jee.server:JSP2::jst.web::4.0"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="40">
+    <list key="modules" value0="MavenTest::org.eclipse.jst.j2ee.server:MavenTest::jst.web::2.3" value1="MemberSystem2_model2::org.eclipse.jst.jee.server:MemberSystem2_model2::jst.web::4.0" value2="00_MainProject_solo::org.eclipse.jst.jee.server:00_MainProject_solo::jst.web::4.0"/>
   </server>
 </servers>

@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+	pageContext.setAttribute("nick", "순이");	
+	String nick = (String)pageContext.getAttribute("nick");	
+	
+	RequestDispatcher rd = request.getRequestDispatcher("Ex02RequestScope2.jsp");
+	request.setAttribute("nick", "순이");
+	rd.forward(request, response);
+	
+	%>
+	
+	닉네임 : <%=nick %><br>
+	닉네임(EL) : ${pageScope.nick}<br>
+	
+	<a href="Ex02RequestScope2.jsp">2페이지로 이동</a>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+        ul{
+            display: flex;
+            list-style-type: none;
+            font-size: 1.25rem;
+            align-items: center
+        }
+        .container{
+            display: flex;
+            /* background-color: #ffffff; */
+            padding: 0 10%;
+            justify-content: space-between;
+        }
+        .imgSec{
+            display: flex;
+            align-items: center
+        }
+        li{
+         margin: 0 15px;   
+         /* background-color: #ffffff; */
+         /* padding: 15px 0px; */
+        }
+        .joinBtn{
+            background-color: #008acc;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+
+        }
+        li:hover{
+            color: #008acc;
+            text-decoration: underline;
+            text-underline-position: under;
+            cursor: pointer;
+        }
+        .joinBtn:hover{
+            background-color: #0d4660;
+            color: white;
+            text-decoration: none;
+        }
+</style>
+</head>
+<body>
+	<ul>
+		<li><a>로그인</a></li>
+		<li><a href="join.jsp">회원가입</a></li>
+		<li><a>회원정보수정</a></li>
+		<li><a href="delete.jsp">회원탈퇴</a></li>
+		<li><a>회원목록보기</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+package com.smhrd.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/Ex07AddPhone")
+public class Ex07AddPhone extends HttpServlet {
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Session에 회원의 연락처 담기
+		
+		// 이름, 직급, 전화번호, 이메일		
+		PhoneDTO dto1 = new PhoneDTO("김군순", "바보", "010-2035-2101", "ejh@gmail.com", 31);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("dto", dto1);
+	
+	}
+
+}

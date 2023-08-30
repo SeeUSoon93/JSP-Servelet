@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.MemberDTO"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 1.request영역에 저장된 정보를 가져오시오. -->
 
@@ -26,12 +30,24 @@
 							<tr>
 								<td>Email</td>
 								<td>Tel</td>
-								<td>Address</td>							
+								<td>Address</td>
 							</tr>
 							<!-- Q10. 테이블에 저장된 모든 회원의 이메일(email),전화번호(tel),주소(address)를 출력하시오. -->
+							<% MemberDAO dao = new MemberDAO();
+							ArrayList<MemberDTO> showMember = (ArrayList)dao.showMember();
+							System.out.println(showMember.size());
+							for(MemberDTO mem : showMember){%>
+							<tr>
+								<td><%= mem.getEmail() %></td>
+								<td><%= mem.getTel() %></td>
+								<td><%= mem.getAddress() %></td>
+								<td><a href="DeleteService?email=<%=mem.getEmail()%>">X</a></td>
+							</tr>
+							<%} %>															
 						</table>
+						
 					</nav>		
-					<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
+					<a href="Main.jsp" class="button next scrolly">되돌아가기</a>	
 			</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

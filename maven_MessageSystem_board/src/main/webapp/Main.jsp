@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -13,17 +14,32 @@
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <body>
+	<% MemberDTO login = (MemberDTO)session.getAttribute("loginInfo"); %>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
 
 		<!-- Header -->
 		<header id="header" class="alt"> <a href="index.html"
-			class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a> <nav>
-		<!-- Q6. 로그인을 한 상태에서는 로그인탭 대신 로그아웃탭과 개인정보수정탭을 출력 --> <a href="#menu">로그인</a>
-
-		<!-- Q7. 개인정보수정 기능 만들기 --> <!-- Q8. 로그아웃 기능 만들기 --> <!-- Q9. 관리자 계정(admin)일 때는 회원정보관리 탭 만들기 -->
-		</nav> </header>
+			class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+			<nav>
+		<!-- Q6. 로그인을 한 상태에서는 로그인탭 대신 로그아웃탭과 개인정보수정탭을 출력 -->
+		<%if(login != null){%>
+			<a href="logout">로그아웃</a>
+			<a href="UpdateMember.jsp">개인정보수정</a>
+			<%if(login.getEmail().equals("admin")){%>
+			<a href="ShowMember.jsp">전체회원목록</a>
+			<%}%>		
+		<%}else{ %>
+			<a href="#menu">로그인</a>
+		<%} %>
+		
+		<!-- Q7. 개인정보수정 기능 만들기 -->		
+		<!-- Q8. 로그아웃 기능 만들기 -->		
+		<!-- Q9. 관리자 계정(admin)일 때는 회원정보관리 탭 만들기 -->
+		
+			</nav>
+		</header>
 
 		<!-- Menu -->
 		<nav id="menu">
@@ -31,8 +47,8 @@
 			<!-- Q3. 로그인 기능 만들기 -->
 			<li><h5>로그인</h5></li>
 			<form action="LoginService" method="post">
-				<li><input type="text" placeholder="Email을 입력하세요"></li>
-				<li><input type="password" placeholder="PW를 입력하세요"></li>
+				<li><input type="text" placeholder="Email을 입력하세요" name="email"></li>
+				<li><input type="password" placeholder="PW를 입력하세요" name="pw"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
 			</form>
 		</ul>
@@ -53,9 +69,10 @@
 		<div class="inner">
 			<header class="major"> <!-- Q4. 로그인 후 로그인한 사용자의 아이디로 바꾸기 -->
 			<!-- ex) smhrd님 환영합니다.  -->
-			<% String email = request.getParameter("email");
-			if(email != null){%>
-			<h1><%= email %>님 환영합니다~</h1>
+			<%if(login != null){%>
+			<h1><%= login.getEmail() %>님 환영합니다~</h1>
+			<%}else{ %>
+			<h1>로그인해주세요~</h1>
 			<%} %>
 			</header>
 			<div class="content">
@@ -127,7 +144,11 @@
 				<ul class="actions">
 					<!-- Q12. 로그인 이메일 출력! -->
 					<!-- ex) smhrd님에게 온 메시지  -->
+					<%if(login != null){%>
+					<li><%= login.getEmail() %> 님에게 온 메세지</li>
+					<%}else{ %>
 					<li>로그인을 하세요.</li>
+					<%} %>					
 					<!-- Q14. 메시지 전체 삭제 기능 -->
 					<li><a href="#" class="button next scrolly">전체삭제하기</a></li>
 				</ul>
@@ -169,22 +190,36 @@
 			<div class="contact-method">
 				<span class="icon alt fa-envelope"></span>
 				<h3>Email</h3>
+
 				<!-- Q5. 로그인 한 사용자의 이메일을 출력 -->
-				<a href="#">로그인 한 사람의 이메일을 출력</a>
+				<%if(login != null){%>
+				<a href="#"><%= login.getEmail() %></a>
+				<%}else{ %>
+				<a href="#"> </a>
+				<%} %>
+
 			</div>
 			</section> <section>
 			<div class="contact-method">
 				<span class="icon alt fa-phone"></span>
 				<h3>Phone</h3>
 				<!-- Q5. 로그인 한 사용자의 전화번호를 출력 -->
-				<span>로그인 한 사람의 전화번호를 출력</span>
+				<%if(login != null){%>
+				<span><%= login.getTel() %></span>
+				<%}else{ %>
+				<span></span>
+				<%} %>
 			</div>
 			</section> <section>
 			<div class="contact-method">
 				<span class="icon alt fa-home"></span>
 				<h3>Address</h3>
 				<!-- Q5. 로그인 한 사용자의 집주소를 출력 -->
-				<span>로그인 한 사람의 집주소를 출력</span>
+				<%if(login != null){%>
+				<span><%= login.getAddress() %></span>
+				<%}else{ %>
+				<span></span>
+				<%} %>
 			</div>
 			</section> </section>
 		</div>
@@ -225,4 +260,3 @@
 
 </body>
 </html>
-

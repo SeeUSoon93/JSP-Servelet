@@ -1,5 +1,8 @@
 package com.smhrd.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -18,11 +21,31 @@ public class MemberDAO {
 
 	public MemberDTO login(MemberDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);		
-		MemberDTO info = session.selectOne("com.smhrd.db.memberMapper.login",dto);		
+		MemberDTO loginInfo = session.selectOne("com.smhrd.db.memberMapper.login",dto);		
 		session.close();		
-		return info;
+		return loginInfo;
 	}
 	
+	public int update(MemberDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);		
+		int cnt = session.update("com.smhrd.db.memberMapper.update",dto);		
+		session.close();		
+		return cnt;
+	}
+	
+	public List<MemberDTO> showMember() {
+		SqlSession session = sqlSessionFactory.openSession(true);		
+		ArrayList<MemberDTO> showMember = (ArrayList)session.selectList("com.smhrd.db.memberMapper.showMember");	
+		session.close();		
+		return showMember;
+	}
+	
+	public int deleteMember(String email) {		
+		SqlSession session = sqlSessionFactory.openSession(true);		
+		int cnt = session.delete("com.smhrd.db.memberMapper.deleteMember", email);		
+		session.close();		
+		return cnt;
+	}
 	
 	
 

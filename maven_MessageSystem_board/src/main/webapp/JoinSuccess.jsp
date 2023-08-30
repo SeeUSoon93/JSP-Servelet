@@ -1,5 +1,5 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,6 +19,7 @@
 }
 </style>
 <body style="text-align: center;">
+	<% String joinEmail = (String)request.getAttribute("joinEmail");%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -28,10 +29,7 @@
 			<li><h1>환영합니다!</h1></li>
 			<li>회원가입을 축하합니다.</li>
 			<!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
-			<% String email = request.getParameter("email");
-			if(email != null){%>
-			<li>메세지시스템의 새로운 이메일은 <%= email %>입니다.</li>
-			<%} %>
+			<li>메세지시스템의 새로운 이메일은 ${joinEmail}입니다.</li>
 			<li><button onclick='location.href="Main.jsp"'>시작하기</button></li>
 		</ul>
 		</nav>

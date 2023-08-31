@@ -1,0 +1,21 @@
+package com.smhrd.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+// @Data -> 기본생성자, getter, setter, toString 등등
+@Getter // Mybatis에서 값을 가져와 줄 수 있는 getter메소드
+@AllArgsConstructor // 모든 파라미터를 받는 생성자
+@RequiredArgsConstructor
+public class MemberDTO {
+
+	// 필드
+	private String email;
+	private String pw;
+	private String tel;
+	private String address;
+	
+
+
+}

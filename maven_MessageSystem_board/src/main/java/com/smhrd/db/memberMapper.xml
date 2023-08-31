@@ -17,8 +17,8 @@
 	<select id="showMember" resultType="MemberDTO">
 		SELECT * FROM WEB_MEMBER WHERE NOT (EMAIL = 'admin')
 	</select>
-	<delete id="deleteMember" parameterType="String">
-		DELETE WEB_MEMBER WHERE email = #{email}
+	<delete id="deleteMember">
+		DELETE WEB_MEMBER WHERE NUM = #{NUM}
 	</delete>
 	
 	

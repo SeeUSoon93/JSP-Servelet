@@ -1,0 +1,13 @@
+package com.smhrd.model;
+
+public class MemberDTO {
+
+	// 필드
+	private String email;
+	private String pw;
+	private String tel;
+	private String address;
+	
+
+
+}

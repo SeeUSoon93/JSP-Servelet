@@ -1,0 +1,12 @@
+package com.smhrd.model;
+
+public class BoardDAO {
+
+	public int boardInsert(BoardVO board) {
+
+		
+		
+		return cnt;
+	}
+
+}

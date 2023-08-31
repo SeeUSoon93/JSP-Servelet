@@ -1,6 +1,8 @@
 INDEX VERSION 1.134
 C:\Users\SMHRD\Desktop\WebServer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\742072144.index
 \00_MainProject_solo\src\main\java
+C:\Users\SMHRD\Desktop\WebServer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3393544864.index
+\maven_MessageSystem_board\src\main\java
 C:\Users\SMHRD\Desktop\WebServer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1638117934.index
 \Scope\src\main\java
 C:\Users\SMHRD\Desktop\WebServer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3512087399.index

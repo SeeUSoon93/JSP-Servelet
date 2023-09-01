@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Q11"/>
+		<item key="selection" value="Service"/>
 		<list key="findhistory">
+			<item value="service"/>
+			<item value="log"/>
 			<item value="Q11"/>
 			<item value="Q10"/>
 			<item value="menu"/>

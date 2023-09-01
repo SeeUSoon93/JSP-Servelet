@@ -32,13 +32,17 @@
 						<td><%=boardInfo.getWriter() %></td>
 					</tr>
 					<tr>
+						<td>다운로드</td>
+						<td><a href="./file/<%=boardInfo.getFilename() %>" download><%=boardInfo.getFilename() %></a></td>
+					</tr>
+					<tr>
 						<td colspan="2">내용</td>
 					</tr>
 					<tr>
 						<td colspan="2">
 						<img src="./file/<%=boardInfo.getFilename() %>" width="300px">						
 						<br>
-						<%=boardInfo.getContent() %>	
+						<h3><%=boardInfo.getContent() %></h3>	
 						</td>
 					</tr>
 					<tr>

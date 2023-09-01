@@ -19,7 +19,7 @@
 }
 </style>
 <body style="text-align: center;">
-	<% String joinEmail = (String)request.getAttribute("joinEmail");%>
+	<% String joinEmail = request.getParameter("email");%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -29,7 +29,7 @@
 			<li><h1>환영합니다!</h1></li>
 			<li>회원가입을 축하합니다.</li>
 			<!-- Q2. 회원가입 한 회원정보 중 이메일을 출력하시오.(request영역 활용) -->
-			<li>메세지시스템의 새로운 이메일은 ${joinEmail}입니다.</li>
+			<li>메세지시스템의 새로운 이메일은 <%= joinEmail %>입니다.</li>
 			<li><button onclick='location.href="Main.jsp"'>시작하기</button></li>
 		</ul>
 		</nav>

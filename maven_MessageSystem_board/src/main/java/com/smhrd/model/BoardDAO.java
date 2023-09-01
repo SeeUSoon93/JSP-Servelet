@@ -35,7 +35,7 @@ public class BoardDAO {
 		return cnt;		
 	}
 	
-	// 게시글 조회
+	// 게시글 상세 조회
 	public BoardVO showText(int num) {
 		SqlSession session = sqlSessionFactory.openSession(true);		
 		BoardVO boardInfo = session.selectOne("com.smhrd.db.boardMapper.show",num);		

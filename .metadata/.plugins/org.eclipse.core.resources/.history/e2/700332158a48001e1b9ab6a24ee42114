@@ -1,0 +1,35 @@
+package com.smhrd.controller;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.command.Command;
+import com.smhrd.model.MemberDAO;
+import com.smhrd.model.MemberDTO;
+
+public class JoinService implements Command{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		String email = request.getParameter("email");
+		String pw = request.getParameter("pw");
+		String tel = request.getParameter("tel");
+		String address = request.getParameter("address");
+
+		System.out.println(email + pw + tel + address);
+		MemberDTO dto = new MemberDTO(email, pw, tel, address);
+		int cnt = new MemberDAO().join(dto);
+		if (cnt > 0) {
+			System.out.println("회원가입 성공!");
+			RequestDispatcher rd = request.getRequestDispatcher("JoinSuccess.jsp");
+			request.setAttribute("joinEmail", email);
+			rd.forward(request, response);
+		} else {
+			System.out.println("회원가입 실패...");
+			response.sendRedirect("Main.jsp");
+		}
+		return null;
+	}
+
+}

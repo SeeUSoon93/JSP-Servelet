@@ -21,7 +21,7 @@
 					-> 사진파일과 같이 용량이 큰 데이터를 보낼 때 사용(무조건 post방식으로 보내야 함)
 			 -->
 			<div id = "board">
-				<form action="BoardService" method="post" enctype="multipart/form-data">
+				<form action="BoardService.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
 						<td>제목</td>

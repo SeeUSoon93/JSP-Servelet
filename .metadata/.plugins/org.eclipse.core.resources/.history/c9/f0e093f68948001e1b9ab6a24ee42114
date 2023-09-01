@@ -1,0 +1,7 @@
+package com.smhrd.controller;
+
+import com.smhrd.command.Command;
+
+public class JoinService implements Command{
+
+}

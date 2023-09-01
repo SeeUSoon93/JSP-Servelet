@@ -30,13 +30,13 @@
 					<% BoardDAO dao = new BoardDAO();
 						ArrayList<BoardVO> showBoard = (ArrayList)dao.showBoard();
 						System.out.println(showBoard.size());
-						for(BoardVO text : showBoard){%>
+						for(int i = 0; i<showBoard.size(); i++){%>
 					<tr>
-						<td><%= text.getNum() %></td>
-						<td><a href="BoardDetail.jsp?num=<%= text.getNum() %>"><%= text.getTitle() %></a></td>
-						<td><%= text.getWriter() %></td>
-						<td><%= text.getB_date() %></td>
-						<td><a href="DelBoardService?num=<%=text.getNum()%>">X</a></td>
+						<td><%= i+1 %></td>
+						<td><a href="BoardDetail.jsp?num=<%= showBoard.get(i).getNum() %>"><%= showBoard.get(i).getTitle() %></a></td>
+						<td><%= showBoard.get(i).getWriter() %></td>
+						<td><%= showBoard.get(i).getB_date() %></td>
+						<td><a href="DelBoardService.do?num=<%=showBoard.get(i).getNum()%>">X</a></td>
 					</tr>
 					<%} %>
 				

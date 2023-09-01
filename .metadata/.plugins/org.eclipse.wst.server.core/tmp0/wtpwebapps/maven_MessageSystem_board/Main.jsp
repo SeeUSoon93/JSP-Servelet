@@ -25,7 +25,7 @@
 			<nav>
 		<!-- Q6. 로그인을 한 상태에서는 로그인탭 대신 로그아웃탭과 개인정보수정탭을 출력 -->
 		<%if(login != null){%>
-			<a href="logout">로그아웃</a>
+			<a href="logout.do">로그아웃</a>
 			<a href="UpdateMember.jsp">개인정보수정</a>
 			<%if(login.getEmail().equals("admin")){%>
 			<a href="ShowMember.jsp">전체회원목록</a>
@@ -46,7 +46,7 @@
 		<ul class="links">
 			<!-- Q3. 로그인 기능 만들기 -->
 			<li><h5>로그인</h5></li>
-			<form action="LoginService" method="post">
+			<form action="LoginService.do" method="post">
 				<li><input type="text" placeholder="Email을 입력하세요" name="email"></li>
 				<li><input type="password" placeholder="PW를 입력하세요" name="pw"></li>
 				<li><input type="submit" value="LogIn" class="button fit"></li>
@@ -55,8 +55,12 @@
 		<ul class="actions vertical">
 			<!-- Q1. 회원가입 기능 만들기 -->
 			<li><h5>회원가입</h5></li>
-			<form action="JoinService" method="post">
+			<form action="JoinService.do" method="post">
 				<li><input type="text" placeholder="Email을 입력하세요" name="email"></li>
+				
+				<li><button type="button" id="btn">이메일 중복확인</button></li>
+				<li><p id="idcheck"> </p></li>
+				
 				<li><input type="password" placeholder="PW를 입력하세요" name="pw"></li>
 				<li><input type="text" placeholder="전화번호를 입력하세요" name="tel"></li>
 				<li><input type="text" placeholder="집주소를 입력하세요" name="address"></li>
@@ -257,6 +261,38 @@
 	<script src="assets/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
+	
+	<script type="text/javascript">
+	// on() 메소드 -> 부모속성의 이벤트를 물려받아서 지정 선택자에게 이벤트 연결해주는 메소드
+		$('#btn').on('click', function(){
+			// name="email"인 친구가 2개라서 1번 인덱스에 있는 친구 가져오기
+			var email = $('input[name=email]').eq('1').val();
+			console.log(email);
+			$.ajax({
+				url : "IdCheckService.do", /* 어디로 보낼지 */
+				// type : "get", /* 어떤 방식으로 보낼지? */
+				data : {email : email}, /* 어떤 데이터를 보낼지 */
+				datatype : "text", /* 어떤 데이터 타입으로 받아올지 */
+				success : (data)=>{
+					if(data == 'false'){
+						$('#idcheck').html('사용불가능한 아이디입니다!')
+					}else{						
+						$('#idcheck').html('사용가능한 아이디입니다!')
+					}
+				
+				
+				}, /* 성공 시 */
+				error : ()=>{
+					alert('실패');
+				}, /* 실패 시 */
+				
+			})
+			
+		});
+	
+	
+	
+	</script>
 
 </body>
 </html>

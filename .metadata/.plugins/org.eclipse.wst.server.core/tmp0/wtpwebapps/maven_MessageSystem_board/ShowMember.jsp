@@ -41,7 +41,7 @@
 								<td><%= mem.getEmail() %></td>
 								<td><%= mem.getTel() %></td>
 								<td><%= mem.getAddress() %></td>
-								<td><a href="DeleteService?email=<%=mem.getEmail()%>">X</a></td>
+								<td><a href="DeleteService.do?email=<%=mem.getEmail()%>">X</a></td>
 							</tr>
 							<%} %>															
 						</table>

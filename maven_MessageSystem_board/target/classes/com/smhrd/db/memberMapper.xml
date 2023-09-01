@@ -18,8 +18,12 @@
 		SELECT * FROM WEB_MEMBER WHERE NOT (EMAIL = 'admin')
 	</select>
 	<delete id="deleteMember">
-		DELETE WEB_MEMBER WHERE NUM = #{NUM}
+		DELETE WEB_MEMBER WHERE email = #{email}
 	</delete>
 	
+	<!-- 중복확인 -->
+	<select id="idCheck" resultType="MemberDTO">
+		SELECT * FROM WEB_MEMBER WHERE email = #{email}
+	</select>
 	
 </mapper>

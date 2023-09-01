@@ -47,6 +47,20 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	// id중복 체크
+	public boolean idCheck(String email) {
+		SqlSession session = sqlSessionFactory.openSession(true);		
+		MemberDTO vo = session.selectOne("com.smhrd.db.memberMapper.idCheck",email);		
+		session.close();		
+		
+		if(vo != null) {
+			// 중복 O
+			return false;
+		}else {
+			// 중복 X
+			return true;
+		}		
+	}
 	
 
 }

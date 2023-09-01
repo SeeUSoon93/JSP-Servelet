@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.command.Command;
 import com.smhrd.controller.BoardService;
 import com.smhrd.controller.DelBoardService;
 import com.smhrd.controller.DeleteService;
@@ -50,49 +51,39 @@ public class FrontController extends HttpServlet {
 		uri = uri.substring(project.length() + 1);
 		System.out.println("자르기 : " + uri);
 
-		request.setCharacterEncoding("UTF-8");		
+		request.setCharacterEncoding("UTF-8");
+		String moveURL = null;
+		Command service = null;
 
 		if (uri.equals("LoginService.do")) {
-			LoginService service = new LoginService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
-			
+			service = new LoginService();
+
 		} else if (uri.equals("JoinService.do")) {
-			JoinService service = new JoinService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
-			
+			service = new JoinService();
+
 		} else if (uri.equals("logout.do")) {
-			logout service = new logout();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
-			
+			service = new logout();
+
 		} else if (uri.equals("UpdateService.do")) {
-			UpdateService service = new UpdateService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
-		
+			service = new UpdateService();
+
 		} else if (uri.equals("IdCheckService.do")) {
-			IdCheckService service = new IdCheckService();
-			service.execute(request, response);
+			service = new IdCheckService();
 
 		} else if (uri.equals("DeleteService.do")) {
-			DeleteService service = new DeleteService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);		
-		
+			service = new DeleteService();
+
 		} else if (uri.equals("BoardService.do")) {
-			BoardService service = new BoardService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
-		
+			service = new BoardService();
+
 		} else if (uri.equals("DelBoardService.do")) {
-			DelBoardService service = new DelBoardService();
-			String moveURL = service.execute(request, response);
-			response.sendRedirect(moveURL);
+			service = new DelBoardService();
 
 		}
-
+		moveURL = service.execute(request, response);
+		if (moveURL != null) {
+			response.sendRedirect(moveURL);
+		}
 	}
 
 }
